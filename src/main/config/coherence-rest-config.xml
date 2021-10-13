@@ -1,0 +1,13 @@
+<rest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://xmlns.oracle.com/coherence/coherence-rest-config"
+      xsi:schemaLocation="http://xmlns.oracle.com/coherence/coherence-rest-config coherence-rest-config.xsd">
+    <resources>
+        <resource>
+            <cache-name>person</cache-name>
+            <key-class>com.oracle.support.PersonKey</key-class>
+            <value-class>com.oracle.support.Person</value-class>
+            <key-converter>com.oracle.support.PersonKeyConverter</key-converter>
+            <direct-query enabled="true"/>
+        </resource>
+    </resources>
+</rest>

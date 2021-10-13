@@ -1,0 +1,42 @@
+<cache-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns="http://xmlns.oracle.com/coherence/coherence-cache-config"
+              xsi:schemaLocation="http://xmlns.oracle.com/coherence/coherence-cache-config coherence-cache-config.xsd">
+    
+    <caching-scheme-mapping>
+        <cache-mapping>
+            <cache-name>person</cache-name>
+            <scheme-name>distributed-test</scheme-name>
+        </cache-mapping>
+    </caching-scheme-mapping>
+    
+    <caching-schemes>
+        <distributed-scheme>
+            <scheme-name>distributed-test</scheme-name>
+            <backing-map-scheme>
+                <local-scheme/>
+            </backing-map-scheme>
+            <autostart>true</autostart>
+        </distributed-scheme>
+        <proxy-scheme>
+            <scheme-name>my-rest-proxy</scheme-name>
+            <service-name>rest-proxy</service-name>
+            <acceptor-config>
+                <http-acceptor>
+                    <local-address>
+                        <port>1234</port>
+                    </local-address>
+                </http-acceptor>
+            </acceptor-config>
+
+<!--            <proxy-config>
+                <cache-service-proxy>
+                    <class-name>MyService</class-name>
+                    <read-only>true</read-only>
+                </cache-service-proxy>
+            </proxy-config> -->
+
+            <autostart>true</autostart>
+        </proxy-scheme>
+    </caching-schemes>
+
+</cache-config>
